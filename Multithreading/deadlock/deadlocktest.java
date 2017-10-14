@@ -9,7 +9,7 @@ sum = sum+x;
 System.out.println("Sum of"+tname+"="+sum);
 if(tname.equals("user1"))
 {System.out.println("try to get the sum of user 2, may be in deadlock....");
-int othersum = myfactory.r2.getsum();
+int othersum= myfactory.r2.getsum();
 System.out.println("total sum in user1 :"+(sum+othersum));
 }
 if(tname.equals("user2"))
