@@ -1,17 +1,20 @@
 class resource
 {int key;
 boolean b;
-synchronized void login()
+void login()
 {String nm = Thread.currentThread().getName();
 System.out.println(nm+"is starting login");
+synchronized(this)
+{
 try
 {if(!b)
-{System.out.println(nm+"is going into waiting section....");}
-wait();
+{System.out.println(nm+"is going into waiting section....");
+wait();}
 System.out.println(nm+"gets logged in with"+key+"key");
 }
 catch(Exception e)
 {e.printStackTrace();
+}
 }
 }
 synchronized void keygen()
@@ -42,7 +45,7 @@ class notifyalltest
 new mythread(r,"user1");
 new mythread(r,"user2");
 new mythread(r,"user3");
-new mythread(r,"user4");
 new mythread(r,"admin");
+new mythread(r,"user4");
 }
 }
