@@ -1,14 +1,13 @@
 import java.io.*;
-class fileinputstreamtest
+class fileinputstreamtest2
 {public static void main(String s[])
 {try
 {FileInputStream fin = new FileInputStream("abc.txt");
-while(true)
-{int x = fin.read();
-if(x==-1)
-break;
-System.out.print((char)x);
-}
+int size = fin.available();
+byte b[] = new byte[size];
+fin.read(b);
+String str = new String(b);
+System.out.println(str);
 fin.close();
 }
 catch(FileNotFoundException e)
