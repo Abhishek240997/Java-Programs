@@ -17,8 +17,8 @@ dout.writeUTF(str);
 dout.flush();
 if(str.equals("stop"))
 break;
-String msg = din.readUTF();
-System.out.println(msg);
+//String msg = din.readUTF();
+//System.out.println(msg);
 }
 }
 catch(Exception e)

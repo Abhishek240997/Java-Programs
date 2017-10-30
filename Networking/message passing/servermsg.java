@@ -10,19 +10,12 @@ Socket sk = ss.accept();
 System.out.println("client connected");
 DataInputStream din = new DataInputStream(sk.getInputStream());
 DataOutputStream dout = new DataOutputStream(sk.getOutputStream());
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 while(true)
 {String str = din.readUTF();
 System.out.println("client msg : "+str);
-try
-{Thread.sleep(5000);
-}
-catch(InterruptedException e)
-{str = str.toUpperCase();
-dout.writeUTF(str);
-dout.flush();
 if(str.equalsIgnoreCase("stop"))
 break;
-}
 }
 }
 catch(Exception e)

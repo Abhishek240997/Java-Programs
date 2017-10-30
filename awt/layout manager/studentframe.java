@@ -1,10 +1,10 @@
 import java.awt.*;
-class student frame
-{frame fr;
+class studentframe
+{Frame fr;
 Label lb1,lb2;
 Button b1;
-Textfield tf1,tf2;
-student frame()
+TextField tf1,tf2;
+studentframe()
 {fr=new Frame();
 fr.setLayout(null);
 lb1=new Label("name");
@@ -26,6 +26,6 @@ fr.setSize(400,400);
 fr.setVisible(true);
 }
 public static void main(String s[])
-{new student Frame();
+{new studentframe();
 }
 }

@@ -16,10 +16,9 @@ System.out.println("Start to Enter the Messages,Enter 'stop' to terminate");
 while(true)
 {String str = br.readLine();
 dout.writeUTF(name+":"+str);
-{dout.writeUTF("stop");
-dout.flush();
+if(str.equalsIgnoreCase("stop"))
 break;
-}
+dout.flush();
 }
 }
 catch(Exception e)

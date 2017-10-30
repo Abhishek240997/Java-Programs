@@ -5,7 +5,7 @@ class clienttest
 {try
 {System.out.println("client started");
 System.out.println("sending the connection request");
-Socket sc = new Socket("local host",1500);
+Socket sc = new Socket("localhost",1500);
 System.out.println("connection established");
 }
 catch(UnknownHostException e)

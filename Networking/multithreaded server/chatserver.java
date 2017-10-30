@@ -30,9 +30,9 @@ public void run()
 DataOutputStream dout = new DataOutputStream(receiver.getOutputStream());
 while(true)
 {String msg = din.readUTF();
-if(msg.equals("stop"))
+if(msg.equalsIgnoreCase("stop"))
 {dout.writeUTF("Another client get closed");
-dout.writeUTF(msg);
+//dout.writeUTF(msg);
 break;
 }
 dout.writeUTF(msg);
