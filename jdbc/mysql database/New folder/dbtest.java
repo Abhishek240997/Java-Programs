@@ -2,9 +2,8 @@ import java.sql.*;
 class dbtest
 {public static void main(String s[])
 {try
-{Class.forName("com.mysql.jdbc.Driver");
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/emp","root","password1234");
-System.out.println("connection created");
+{Connection con = connectionprovider.get();
+System.out.println("connection obtained");
 Statement st = con.createStatement();
 ResultSet rs = st.executeQuery("select * from employees");
 while(rs.next())
@@ -15,10 +14,7 @@ System.out.println("\t"+rs.getString(4));
 }
 con.close();
 }
-catch(ClassNotFoundException e)
-{e.printStackTrace();
-}
-catch(SQLException e)
+catch(Exception e)
 {e.printStackTrace();
 }
 }
